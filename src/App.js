@@ -13,7 +13,19 @@ import "./App.css";
 
 const App = () => {
   const name = "Modern World";
+
+  /**
+   * counter is not just a normal variable. It's part of the react state. It should only be changed using its own setter function.
+   * @var counter The react state variable.
+   * @var setCounter The setter function to change the state
+   */
   const [counter, setCounter] = useState(0);
+
+  //// Never mutate/modify the state manually. It's most important rule of react.
+
+  useEffect(() => {
+    console.log(`You've changed the counter to ${counter}`);
+  }, [counter]);
   return (
     <div className='App'>
       <>
